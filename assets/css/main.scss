@@ -1,0 +1,14 @@
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.light-gradient-text {
+  background: linear-gradient(180deg, #ffffff 0%, #afc9f5 100%);
+  @apply bg-clip-text;
+  @apply text-transparent;
+}
