@@ -15,4 +15,19 @@ html {
     radial-gradient(80.42% 132.66% at 94.34% 1.61%, #5579b6 0%, #0b357d 100%);
   background-blend-mode: normal, soft-light, normal;
 }
+
+.container {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.light-gradient-text {
+  background: linear-gradient(180deg, #ffffff 0%, #afc9f5 100%);
+  @apply bg-clip-text;
+  @apply text-transparent;
+}
 </style>
