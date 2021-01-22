@@ -5,7 +5,7 @@
         <img src="~assets/logo.svg" alt="SAFT" id="saft-logo" />
       </a>
       <a href="">
-        <img src="~assets/areopagus.svg" alt="Areopagus" id="areopagus-logo" />
+        <img src="~assets/areopagus.png" alt="Areopagus" id="areopagus-logo" />
       </a>
     </div>
     <div class="container">
