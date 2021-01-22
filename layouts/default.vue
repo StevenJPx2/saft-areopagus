@@ -17,9 +17,9 @@ html {
 }
 
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
+  @apply px-12;
+  @apply min-w-full;
+  @apply min-h-screen;
   justify-content: center;
   align-items: center;
   text-align: center;
