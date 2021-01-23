@@ -171,6 +171,7 @@
             <a
               href="https://help.airmeet.com/278/what-are-the-technical-instruction-for-an-attendee"
               target="_blank"
+              class="underline"
               >attendee technical guide here</a
             >.
           </p>
