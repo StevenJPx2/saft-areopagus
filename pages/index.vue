@@ -205,6 +205,10 @@
         </div>
       </section>
     </div>
+    <footer class="py-10 text-center text-white">
+      Copyright © 2020<br />
+      All Rights Reserved by SAFT
+    </footer>
   </div>
 </template>
 
