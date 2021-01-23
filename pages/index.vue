@@ -263,9 +263,10 @@ export default Vue.extend({});
   @apply fixed;
   @apply top-0;
   @apply w-screen;
-  @apply my-4;
+  @apply py-4;
   @apply h-24;
   @apply z-50;
+  background-color: rgba(0, 0, 0, 0.5);
 
   #saft-logo {
     @apply w-12;
