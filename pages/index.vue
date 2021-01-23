@@ -134,7 +134,7 @@
           <h3>Are there any worship sessions?</h3>
           <p>
             On each day we have a brief time of worship led by Sheldon Bangera,
-            Alobo Naga, Amit Kamble and Narrow Gate United.
+            Alobo Naga, Amit Kamble and Sujith M Sunil.
           </p>
         </div>
 
@@ -162,12 +162,17 @@
         <div>
           <h3>What is the device requirement to access AirMeet?</h3>
           <p>
-            AirMeet suggests that attendees use Google Chrome browser and
-            desktop/laptop instead of mobile/tablets. This is because the
-            attendee experience is much better on desktop/laptop. Using other
-            browsers will lead to lag unlike Google Chrome which is very
-            compatible with AirMeet. You can always reach out to us via email or
-            social media to know more.
+            What is the device requirement to access AirMeet? AirMeet suggests
+            that attendees use Google Chrome browser and desktop/laptop instead
+            of mobile/tablets. This is because the attendee experience is much
+            better on desktop/laptop. Using other browsers will lead to lag
+            unlike Google Chrome which is very compatible with AirMeet. Access
+            the
+            <a
+              href="https://help.airmeet.com/278/what-are-the-technical-instruction-for-an-attendee"
+              target="_blank"
+              >attendee technical guide here</a
+            >.
           </p>
         </div>
 
