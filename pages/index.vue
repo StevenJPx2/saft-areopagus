@@ -79,15 +79,16 @@
 
         <div>
           <h3>
-            Is The Areopagus Project related to 'The Areopagus' podcast?
+            Is The Areopagus Project related to 'The Areopagus' podcast, 'The
+            Areopagus Project blog' or 'LCF Areopagus Project'?
           </h3>
           <p>
-            'The Areopagus' is one of many podcasts run by Ancient Faith
-            Ministries. Neither SAFT Apologetics nor The Areopagus Project is
-            affiliated in any way with 'The Areopagus' podcast. While selecting
+            Neither SAFT Apologetics nor The Areopagus Project is affiliated in
+            any way with any of the above mentioned initiatives. While selecting
             the name our preliminary search via ministry associates and the
-            internet didn't bring up the podcast. It was well into the planning
-            of the event that Jacob stumbled upon this podcast.
+            internet didn't bring up these initiatives. It was well into the
+            planning of the event that Jacob stumbled upon these similar named
+            initiatives.
           </p>
         </div>
 
