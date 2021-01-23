@@ -8,7 +8,41 @@
         <img src="~assets/areopagus.png" alt="Areopagus" id="areopagus-logo" />
       </a>
     </div>
-    <div class="container">
+    <div class="main-hero">
+      <img src="~assets/mountain.png" alt="Mountain" id="mountain" />
+      <img
+        src="~assets/areopagus-2021.png"
+        alt="Areopagus 2021"
+        id="areopagus-2021"
+      />
+      <a
+        href="https://www.airmeet.com/e/518df8d0-5cef-11eb-ae4b-6d583263e902"
+        class="`
+        px-6
+        py-4
+        mt-10
+        font-bold
+        tracking-wider
+        text-white
+        uppercase
+        shadow-lg
+        md:mt-16
+        bg-gradient-to-tr
+        from-blue-700
+        to-blue-500
+        rounded-xl
+        transition-all
+        duration-300
+        ease-in-out
+        transform
+        hover:scale-110
+        hover:shadow-xl
+        `"
+        target="_blank"
+        >Register here</a
+      >
+    </div>
+    <div class="container pt-12 md:pt-20">
       <h1 class="title light-gradient-text">
         FAQ
       </h1>
@@ -91,7 +125,7 @@
           <h3>Who are the speakers?</h3>
           <p>
             The speakers are Dr Frank Turek, Dr Fazale Rana, Tom Gilson and Dr
-            William Lane Craig
+            William Lane Craig.
           </p>
         </div>
 
@@ -106,16 +140,33 @@
         <div>
           <h3>Is there registration for the first 3 days?</h3>
           <p>
-            No. The first 3 days are open to all and can be attended without any
-            registration.
+            Yes! To register for free,
+            <a
+              href="https://www.airmeet.com/e/518df8d0-5cef-11eb-ae4b-6d583263e902"
+              target="_blank"
+              class="underline"
+              >click here</a
+            >.
           </p>
         </div>
 
         <div>
           <h3>Where can I attend the conference?</h3>
           <p>
-            The first 3 days will be live streamed on our YouTube channel 'SAFT
-            Apologetics'.
+            Upon successful registration you'll get the link to attend the
+            event. The conference is hosted on AirMeet.
+          </p>
+        </div>
+
+        <div>
+          <h3>What is the device requirement to access AirMeet?</h3>
+          <p>
+            AirMeet suggests that attendees use Google Chrome browser and
+            desktop/laptop instead of mobile/tablets. This is because the
+            attendee experience is much better on desktop/laptop. Using other
+            browsers will lead to lag unlike Google Chrome which is very
+            compatible with AirMeet. You can always reach out to us via email or
+            social media to know more.
           </p>
         </div>
 
@@ -130,11 +181,7 @@
 
         <div>
           <h3>How can I take part in the Q&A?</h3>
-          <p>
-            The Q&A is hosted on Mentimeter. At the start of each day and
-            throughout the conference the host will inform and remind the
-            details required to partake in the Q&A.
-          </p>
+          <p>The Q&A is hosted on AirMeet itself.</p>
         </div>
 
         <div>
@@ -185,12 +232,28 @@ export default Vue.extend({});
   }
 }
 
+.main-hero {
+  @apply pt-40;
+  @apply grid;
+  @apply w-full;
+  @apply justify-items-center;
+
+  #mountain {
+    @apply relative;
+    left: 10px;
+    width: Min(90%, 1000px);
+  }
+
+  #areopagus-2021 {
+    width: Min(85%, 700px);
+  }
+}
+
 .title {
   @apply text-left;
   @apply font-bold;
   @apply text-6xl;
-  @apply pt-24;
-  @apply mb-10;
+  @apply mb-8;
 }
 
 .logos {
@@ -202,6 +265,7 @@ export default Vue.extend({});
   @apply w-screen;
   @apply my-4;
   @apply h-24;
+  @apply z-50;
 
   #saft-logo {
     @apply w-12;
