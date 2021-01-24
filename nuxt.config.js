@@ -19,8 +19,8 @@ export default {
         sizes: "180x180",
         href: "/apple-touch-icon.png"
       },
-      { rel: "icon", type: "image/png", href: "/favicon-32x32.ico" },
-      { rel: "icon", type: "image/png", href: "/favicon-16x16.ico" },
+      { rel: "icon", type: "image/png", href: "/favicon-32x32.png" },
+      { rel: "icon", type: "image/png", href: "/favicon-16x16.png" },
       { rel: "manifest", href: "/site.webmanifest" },
       {
         rel: "mask-icon",
