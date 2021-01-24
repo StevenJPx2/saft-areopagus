@@ -231,15 +231,21 @@ export default Vue.extend({});
   min-height: 100vh;
   columns: 500px;
 
-  h3 {
-    @apply text-2xl;
-    @apply font-semibold;
-    @apply leading-7;
-    @apply mb-2;
-  }
+  div {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
 
-  p {
-    @apply pb-6;
+    h3 {
+      @apply text-2xl;
+      @apply font-semibold;
+      @apply leading-7;
+      @apply mb-2;
+    }
+
+    p {
+      @apply pb-6;
+    }
   }
 }
 
