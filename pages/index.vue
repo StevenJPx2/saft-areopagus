@@ -162,12 +162,11 @@
         <div>
           <h3>What is the device requirement to access AirMeet?</h3>
           <p>
-            What is the device requirement to access AirMeet? AirMeet suggests
-            that attendees use Google Chrome browser and desktop/laptop instead
-            of mobile/tablets. This is because the attendee experience is much
-            better on desktop/laptop. Using other browsers will lead to lag
-            unlike Google Chrome which is very compatible with AirMeet. Access
-            the
+            AirMeet suggests that attendees use Google Chrome browser and
+            desktop/laptop instead of mobile/tablets. This is because the
+            attendee experience is much better on desktop/laptop. Using other
+            browsers will lead to lag unlike Google Chrome which is very
+            compatible with AirMeet. Access the
             <a
               href="https://help.airmeet.com/278/what-are-the-technical-instruction-for-an-attendee"
               target="_blank"
