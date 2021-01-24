@@ -10,7 +10,7 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "msapplication-TileColor", content: "#da532c" },
       { name: "theme-color", content: "#ffffff" },
-      { hid: "description", name: "description", content: "" }
+      { hid: "description", name: "description", content: "Proclaiming the Known God." }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
