@@ -16,7 +16,7 @@
         id="areopagus-2021"
       />
       <a
-        href="https://www.airmeet.com/e/518df8d0-5cef-11eb-ae4b-6d583263e902"
+        href="https://www.airmeet.com/e/032d8050-5f53-11eb-ba6d-c33b93201ed2"
         class="`
         px-6
         py-4
@@ -143,7 +143,7 @@
           <p>
             Yes! To register for free,
             <a
-              href="https://www.airmeet.com/e/518df8d0-5cef-11eb-ae4b-6d583263e902"
+              href="https://www.airmeet.com/e/032d8050-5f53-11eb-ba6d-c33b93201ed2"
               target="_blank"
               class="underline"
               >click here</a
