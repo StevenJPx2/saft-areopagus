@@ -37,6 +37,7 @@
         transform
         hover:scale-110
         hover:shadow-xl
+        hidden
         `"
         target="_blank"
         >Register here</a
