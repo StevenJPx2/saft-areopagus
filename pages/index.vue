@@ -58,12 +58,12 @@
         </div>
 
         <div>
-          <h3>What is the name of this year's conference?</h3>
-          <p>The name of this year's conference is Areopagus 2021.</p>
+          <h3>What was the name of this year's conference?</h3>
+          <p>The name of this year's conference was Areopagus 2021.</p>
         </div>
 
         <div>
-          <h3>Is this the first conference of SAFT?</h3>
+          <h3>Was this the first conference of SAFT?</h3>
           <p>Yes.</p>
         </div>
 
@@ -94,101 +94,78 @@
         </div>
 
         <div>
-          <h3>
-            What is the theme of the conference?
-          </h3>
+          <h3>What was the theme of the conference?</h3>
           <p>
             Proclaiming The Known God.
           </p>
         </div>
 
         <div>
-          <h3>When is the conference happening?</h3>
-          <p>
-            The conference takes places from February 11th to 13th and concludes
-            on 18th.
-          </p>
+          <h3>When did the conference happen?</h3>
+          <p>The conference took place in February.</p>
         </div>
 
         <div>
-          <h3>Are all days open to the public?</h3>
+          <h3>Who were the speakers?</h3>
           <p>
-            The conference is open to the public for the first 3 days (February
-            11th to 13th) and the final day is an exclusive event.
-          </p>
-        </div>
-
-        <div>
-          <h3>What is the timing?</h3>
-          <p>The first three days take place from 7pm to 9pm Indian time.</p>
-        </div>
-
-        <div>
-          <h3>Who are the speakers?</h3>
-          <p>
-            The speakers are Dr Frank Turek, Dr Fazale Rana, Tom Gilson and Dr
+            The speakers were Dr Frank Turek, Dr Fazale Rana, Tom Gilson and Dr
             William Lane Craig.
           </p>
         </div>
 
         <div>
-          <h3>Are there any worship sessions?</h3>
+          <h3>Were there any worship sessions?</h3>
           <p>
-            On each day we have a brief time of worship led by Sheldon Bangera,
+            On each day we had a brief time of worship led by Sheldon Bangera,
             Alobo Naga, Amit Kamble and Sujith M Sunil.
           </p>
         </div>
 
         <div>
-          <h3>Is there registration for the first 3 days?</h3>
-          <p>
-            Yes! To register for free,
-            <a
-              href="https://www.airmeet.com/e/032d8050-5f53-11eb-ba6d-c33b93201ed2"
-              target="_blank"
-              class="underline"
-              >click here</a
-            >.
-          </p>
+          <h3>Was the conference virtual or offline?</h3>
+          <p>The conference was completely online and was hosted on AirMeet.</p>
         </div>
 
         <div>
-          <h3>Where can I attend the conference?</h3>
+          <h3>I missed out on the conference. Can I watch the recordings?</h3>
           <p>
-            Upon successful registration you'll get the link to attend the
-            event. The conference is hosted on AirMeet.
-          </p>
-        </div>
-
-        <div>
-          <h3>What is the device requirement to access AirMeet?</h3>
-          <p>
-            AirMeet suggests that attendees use Google Chrome browser and
-            desktop/laptop instead of mobile/tablets. This is because the
-            attendee experience is much better on desktop/laptop. Using other
-            browsers will lead to lag unlike Google Chrome which is very
-            compatible with AirMeet. Access the
+            You can! You can access our conference recordings
             <a
               href="https://help.airmeet.com/278/what-are-the-technical-instruction-for-an-attendee"
               target="_blank"
               class="underline"
-              >attendee technical guide here</a
+              >here</a
             >.
           </p>
         </div>
 
         <div>
-          <h3>Why should I attend live? Can't I watch the recording later?</h3>
+          <h3>Can we expect Areopagus 2022?</h3>
           <p>
-            The speakers are joining in live and hence will be fielding live Q&A
-            from the audience for 60mins. Joining in live is the best way to
-            experience the conference and make use of the Q&A opportunity.
+            Yes! We are very much looking forward to the next year. As of now we
+            don't have any plans to call off the conference but since our aim is
+            to 'use' the conference to 'share the Gospel effectively' and not do
+            a conference just for namesake, if we come upon another avenue we
+            can focus our efforts on, we may have to consider it. After all, as
+            our Creative Director Steven says, we are a 'microscopic team' so
+            there's only so much we can do!
           </p>
         </div>
 
         <div>
-          <h3>How can I take part in the Q&A?</h3>
-          <p>The Q&A is hosted on AirMeet itself.</p>
+          <h3>
+            You are doing an amazing job! How can I partner with you/join your
+            team?
+          </h3>
+          <p>
+            Thank you! You can contact our Executive Director Ankit Nayak at
+            <a
+              href="mailto:ankit@saftapologetics.com?subject=I%20want%20to%20partner%20with%20SAFT%21"
+              >ankit@saftapologetics.com</a
+            >
+            to take this conversation further. We look towards what God has in
+            store for us with you!
+          </p>
         </div>
 
         <div>
