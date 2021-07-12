@@ -167,25 +167,6 @@
             store for us with you!
           </p>
         </div>
-
-        <div>
-          <h3>Who can join the final day of the conference?</h3>
-          <p>
-            The final day is an exclusive-invitation-only event. Invitation is
-            sent out from SAFT Apologetics to selected individuals and
-            ministries.
-          </p>
-        </div>
-
-        <div>
-          <h3>How can I support the event?</h3>
-          <p>
-            You can support the event by keeping the team and the event in your
-            prayers and sharing the poster and news about the conference to
-            anyone who you think would benefit from hearing these top Christian
-            speakers proclaim God.
-          </p>
-        </div>
       </section>
     </div>
     <footer class="py-10 text-center text-white">
