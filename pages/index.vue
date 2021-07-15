@@ -131,7 +131,7 @@
           <p>
             You can! You can access our conference recordings
             <a
-              href="https://help.airmeet.com/278/what-are-the-technical-instruction-for-an-attendee"
+              href="https://www.youtube.com/watch?v=sWqV5GqDjJM&list=PLaYfapFz2p2X2nME3KkpGJkqdS9P-lQRZ"
               target="_blank"
               class="underline"
               >here</a
