@@ -51,10 +51,10 @@ const parallax = (mag: number) =>
       </section>
     </article>
 
-    <img src="assets/Top Leaf.svg" id="top-leaf" />
-    <img src="assets/Bottom Leaf.svg" id="bottom-leaf" />
-    <img src="assets/Top Circle Group.svg" id="top-circle" />
-    <img src="assets/Bottom Circle Group.svg" id="bottom-circle" />
+    <img src="assets/Top-Leaf.svg" id="top-leaf" />
+    <img src="assets/Bottom-Leaf.svg" id="bottom-leaf" />
+    <img src="assets/Top-Circle-Group.svg" id="top-circle" />
+    <img src="assets/Bottom-Circle-Group.svg" id="bottom-circle" />
   </main>
 </template>
 
