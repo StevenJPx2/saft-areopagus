@@ -7,7 +7,7 @@ const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
-      transform: `translate(${tilt.value * -mag}px, ${roll.value * mag}px)`,
+      transform: `translate(${tilt.value * mag}px, ${roll.value * -mag}px)`,
     })
   ).value;
 </script>
@@ -23,19 +23,19 @@ const parallax = (mag: number) =>
         src="~/assets/areopagus-typeform.svg"
         alt="Areopagus Project Typeform"
         id="areopagus-typeform"
-        :style="parallax(45)"
+        :style="parallax(55)"
       />
       <img
         src="~/assets/mountain.png"
         alt="Areopagus Mountain"
         id="mountain"
-        :style="parallax(30)"
+        :style="parallax(45)"
       />
       <img
         src="~/assets/areopagus-2022-typeform.png"
         alt="Areopagus 2022 Typeform"
         id="areopagus-2022-typeform"
-        :style="parallax(45)"
+        :style="parallax(30)"
       />
       <section id="logos" :style="parallax(55)">
         <a href="https://saftapologetics.com/" target="_blank">
@@ -105,7 +105,7 @@ main {
 
       & * {
         width: 100%;
-        height: max-content;
+        height: 100%;
       }
 
       #saft-typeform {
