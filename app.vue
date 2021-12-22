@@ -20,19 +20,19 @@ const parallax = (mag: number) =>
   <main ref="mainRef">
     <article id="hero">
       <img
-        src="assets/areopagus-typeform.svg"
+        src="~/assets/areopagus-typeform.svg"
         alt="Areopagus Project Typeform"
         id="areopagus-typeform"
         :style="parallax(45)"
       />
       <img
-        src="assets/mountain.png"
+        src="~/assets/mountain.png"
         alt="Areopagus Mountain"
         id="mountain"
         :style="parallax(30)"
       />
       <img
-        src="assets/areopagus-2022-typeform.png"
+        src="~/assets/areopagus-2022-typeform.png"
         alt="Areopagus 2022 Typeform"
         id="areopagus-2022-typeform"
         :style="parallax(45)"
@@ -40,21 +40,21 @@ const parallax = (mag: number) =>
       <section id="logos" :style="parallax(55)">
         <a href="https://saftapologetics.com/" target="_blank">
           <img
-            src="assets/saft-typeform.png"
+            src="~/assets/saft-typeform.png"
             alt="SAFT Typeform"
             id="saft-typeform"
           />
         </a>
         <a href="https://womeninapologetics.com/" target="_blank">
-          <img src="assets/wia.png" alt="WIA Logo" id="wia" />
+          <img src="~/assets/wia.png" alt="WIA Logo" id="wia" />
         </a>
       </section>
     </article>
 
-    <img src="assets/Top-Leaf.svg" id="top-leaf" />
-    <img src="assets/Bottom-Leaf.svg" id="bottom-leaf" />
-    <img src="assets/Top-Circle-Group.svg" id="top-circle" />
-    <img src="assets/Bottom-Circle-Group.svg" id="bottom-circle" />
+    <img src="~/assets/Top-Leaf.svg" id="top-leaf" />
+    <img src="~/assets/Bottom-Leaf.svg" id="bottom-leaf" />
+    <img src="~/assets/Top-Circle-Group.svg" id="top-circle" />
+    <img src="~/assets/Bottom-Circle-Group.svg" id="bottom-circle" />
   </main>
 </template>
 
