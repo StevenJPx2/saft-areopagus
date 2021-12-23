@@ -26,13 +26,13 @@ const parallax = (mag: number) =>
         :style="parallax(55)"
       />
       <img
-        src="~/assets/mountain.png"
+        src="~/assets/mountain.webp"
         alt="Areopagus Mountain"
         id="mountain"
         :style="parallax(45)"
       />
       <img
-        src="~/assets/areopagus-2022-typeform.png"
+        src="~/assets/areopagus-2022-typeform.webp"
         alt="Areopagus 2022 Typeform"
         id="areopagus-2022-typeform"
         :style="parallax(30)"
@@ -40,13 +40,13 @@ const parallax = (mag: number) =>
       <section id="logos" :style="parallax(55)">
         <a href="https://saftapologetics.com/" target="_blank">
           <img
-            src="~/assets/saft-typeform.png"
+            src="~/assets/saft-typeform.webp"
             alt="SAFT Typeform"
             id="saft-typeform"
           />
         </a>
         <a href="https://womeninapologetics.com/" target="_blank">
-          <img src="~/assets/wia.png" alt="WIA Logo" id="wia" />
+          <img src="~/assets/wia.webp" alt="WIA Logo" id="wia" />
         </a>
       </section>
     </article>
