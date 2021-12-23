@@ -4,6 +4,6 @@ import { defineNuxtConfig } from "nuxt3";
 export default defineNuxtConfig({
   buildModules: ["@vueuse/nuxt"],
   vite: {
-     build: {assetsInlineLimit: 0},
-  }
+    build: { assetsInlineLimit: 0 },
+  },
 });

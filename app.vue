@@ -2,8 +2,24 @@
 import { CSSProperties } from "nuxt3/dist/app/compat/capi";
 
 const mainRef = ref(null);
-const { tilt, roll } = useParallax(mainRef);
+const isDeviceOrientation = ref(false);
 
+const useDeviceOrientation = () => {
+  if (
+    typeof DeviceMotionEvent !== "undefined" &&
+    typeof DeviceMotionEvent.requestPermission === "function"
+  ) {
+    DeviceMotionEvent.requestPermission()
+      .then((response) => {
+        // (optional) Do something after API prompt dismissed.
+        alert(response);
+      })
+      .catch(console.error);
+  } else {
+    console.log("DeviceMotionEvent is not defined");
+  }
+};
+const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
@@ -18,6 +34,7 @@ const parallax = (mag: number) =>
   </head>
 
   <main ref="mainRef">
+    <button v-show="false" @click="useDeviceOrientation()">use Device orientation</button>
     <article id="hero">
       <img
         src="~/assets/areopagus-typeform.svg"
@@ -70,8 +87,10 @@ main {
   height: 100vh;
   width: 100vw;
   display: grid;
+  position: absolute;
   place-items: center;
   background-color: #f1f5f9;
+  overflow: hidden;
 
   #hero {
     display: grid;
@@ -83,25 +102,26 @@ main {
     }
 
     #areopagus-typeform {
-      width: 13vw;
+      width: 37vw;
       margin-bottom: 2vw;
     }
 
     #mountain {
-      width: 50vw;
-      margin-bottom: -4vw;
+      width: 90vw;
+      margin-bottom: -9vw;
     }
 
     #areopagus-2022-typeform {
-      width: 40vw;
-      margin-bottom: 4vw;
+      width: 81vw;
+      margin-bottom: 11vw;
       z-index: -1;
     }
+
     #logos {
       display: flex;
       flex: 0 1 auto;
       align-items: center;
-      width: 30vw;
+      width: 77vw;
 
       & * {
         width: 100%;
@@ -122,31 +142,95 @@ main {
   #top-circle,
   #bottom-circle {
     position: absolute;
+    overflow: hidden;
     z-index: -1;
   }
 
   #top-leaf {
     top: 0;
     right: 0;
-    width: 20vw;
+    transform: translateX(9vw);
+    width: 65vw;
   }
 
   #bottom-leaf {
     bottom: 0;
     left: 0;
-    width: 30vw;
+    width: 69vw;
   }
 
   #top-circle {
     top: 0;
     left: 0;
-    width: 22vw;
+    transform: translateX(-14vw);
+    width: 60vw;
   }
 
   #bottom-circle {
     bottom: 0;
     right: 0;
-    width: 14vw;
+    width: 38vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    #hero {
+      #areopagus-typeform {
+        width: 13vw;
+        margin-bottom: 2vw;
+      }
+
+      #mountain {
+        width: 50vw;
+        margin-bottom: -4vw;
+      }
+
+      #areopagus-2022-typeform {
+        width: 40vw;
+        margin-bottom: 4vw;
+      }
+
+      #logos {
+        width: 30vw;
+
+        & * {
+          width: 100%;
+          height: 100%;
+        }
+
+        #saft-typeform {
+        }
+
+        #wia {
+          margin-left: 4vw;
+        }
+      }
+    }
+
+    #top-leaf {
+      top: 0;
+      right: 0;
+      width: 20vw;
+    }
+
+    #bottom-leaf {
+      bottom: 0;
+      left: 0;
+      width: 30vw;
+    }
+
+    #top-circle {
+      top: 0;
+      left: 0;
+      width: 22vw;
+    }
+
+    #bottom-circle {
+      bottom: 0;
+      right: 0;
+      width: 14vw;
+    }
   }
 }
 </style>
