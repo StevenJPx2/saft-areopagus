@@ -136,7 +136,7 @@ main {
 
     #mountain {
       width: 90vw;
-      margin-bottom: -9vw;
+      margin-bottom: -8vw;
     }
 
     #areopagus-2022-typeform {
