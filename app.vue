@@ -35,13 +35,36 @@ const parallax = (mag: number) =>
 </script>
 
 <template>
-  <head>
-    <title>Areopagus 2022 - The Areopagus Project</title>
-  </head>
+  <Html>
+    <Head>
+      <Title>Areopagus 2022 - The Areopagus Project</Title>
+      <Link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
+      <Link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon-32x32.png"
+      />
+      <Link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon-16x16.png"
+      />
+      <Link rel="manifest" href="/site.webmanifest" />
+
+      <Meta name="msapplication-TileColor" content="#2b5797" />
+      <Meta name="theme-color" content="#ffffff" />
+    </Head>
+  </Html>
 
   <main ref="mainRef">
     <div v-show="isDeviceOrientation" id="permission">
-      <button @click="useDeviceOrientation()">use Device orientation</button>
+      <button @click="useDeviceOrientation()">Use Device Orientation</button>
     </div>
     <article id="hero">
       <img
@@ -65,7 +88,7 @@ const parallax = (mag: number) =>
       <section id="logos" :style="parallax(55)">
         <a href="https://saftapologetics.com/" target="_blank">
           <img
-            src="~/assets/saft-typeform.webp"
+            src="~/assets/saft-typeform.svg"
             alt="SAFT Typeform"
             id="saft-typeform"
           />
@@ -186,7 +209,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 640px) {
   main {
     #hero {
       * {
