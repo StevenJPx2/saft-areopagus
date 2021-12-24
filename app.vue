@@ -4,21 +4,21 @@ import { CSSProperties } from "nuxt3/dist/app/compat/capi";
 const mainRef = ref(null);
 const isDeviceOrientation = ref(false);
 
-const useDeviceOrientation = () => {
+tryOnMounted(() => {
   if (
     typeof DeviceMotionEvent !== "undefined" &&
     typeof DeviceMotionEvent.requestPermission === "function"
-  ) {
+  )
+    isDeviceOrientation.value = true;
+});
+
+const useDeviceOrientation = () => {
     DeviceMotionEvent.requestPermission()
       .then((response) => {
-        // (optional) Do something after API prompt dismissed.
         alert(response);
       })
       .catch(console.error);
-  } else {
-    console.log("DeviceMotionEvent is not defined");
-  }
-};
+  }};
 const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
@@ -34,7 +34,9 @@ const parallax = (mag: number) =>
   </head>
 
   <main ref="mainRef">
-    <button v-show="false" @click="useDeviceOrientation()">use Device orientation</button>
+    <button v-show="isDeviceOrientation" @click="useDeviceOrientation()">
+      use Device orientation
+    </button>
     <article id="hero">
       <img
         src="~/assets/areopagus-typeform.svg"
@@ -43,13 +45,13 @@ const parallax = (mag: number) =>
         :style="parallax(55)"
       />
       <img
-        src="~/assets/mountain.webp"
+        src="~/assets/mountain.webp?nf_resize=fit&w=1200"
         alt="Areopagus Mountain"
         id="mountain"
         :style="parallax(45)"
       />
       <img
-        src="~/assets/areopagus-2022-typeform.webp"
+        src="~/assets/areopagus-2022-typeform.webp?nf_resize=fit&w=1000"
         alt="Areopagus 2022 Typeform"
         id="areopagus-2022-typeform"
         :style="parallax(30)"
@@ -57,13 +59,13 @@ const parallax = (mag: number) =>
       <section id="logos" :style="parallax(55)">
         <a href="https://saftapologetics.com/" target="_blank">
           <img
-            src="~/assets/saft-typeform.webp"
+            src="~/assets/saft-typeform.webp?nf_resize=fit&w=350"
             alt="SAFT Typeform"
             id="saft-typeform"
           />
         </a>
         <a href="https://womeninapologetics.com/" target="_blank">
-          <img src="~/assets/wia.webp" alt="WIA Logo" id="wia" />
+          <img src="~/assets/wia.webp?nf_resize=fit&w=350" alt="WIA Logo" id="wia" />
         </a>
       </section>
     </article>
