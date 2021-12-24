@@ -36,9 +36,6 @@ const parallax = (mag: number) =>
   </head>
 
   <main ref="mainRef">
-    <div v-show="isDeviceOrientation" id="permission" style="display: hidden">
-      <button @click="useDeviceOrientation()">use Device orientation</button>
-    </div>
     <article id="hero">
       <img
         src="~/assets/areopagus-typeform.svg"
@@ -101,18 +98,6 @@ main {
   * {
     touch-action: none;
     user-select: none;
-  }
-
-  #permission {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: grid;
-    place-content: center;
   }
 
   #hero {
