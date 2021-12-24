@@ -28,8 +28,8 @@ const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
-      transform: `translate(${tilt.value * mag * (isMobile.value ? 1 : 3)}px, ${
-        roll.value * -mag * (isMobile.value ? 1 : 3)
+      transform: `translate(${tilt.value * mag * (isMobile.value ? 1 : 4)}px, ${
+        roll.value * -mag * (isMobile.value ? 1 : 4)
       }px)`,
     })
   ).value;
