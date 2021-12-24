@@ -10,6 +10,7 @@ tryOnMounted(() => {
     typeof DeviceMotionEvent.requestPermission === "function"
   )
     isDeviceOrientation.value = true;
+    useDeviceOrientation()
 });
 
 const useDeviceOrientation = () => {
@@ -35,7 +36,7 @@ const parallax = (mag: number) =>
   </head>
 
   <main ref="mainRef">
-    <div v-show="isDeviceOrientation" id="permission">
+    <div v-show="isDeviceOrientation" id="permission" style="display: hidden">
       <button @click="useDeviceOrientation()">use Device orientation</button>
     </div>
     <article id="hero">
