@@ -16,7 +16,7 @@ const useDeviceOrientation = () => {
   DeviceMotionEvent.requestPermission()
     .then((response: "granted" | "denied") => {
       if (response == "granted") isDeviceOrientation.value = false;
-      alert(response);
+      else alert(response);
     })
     .catch(console.error);
 };
@@ -35,10 +35,8 @@ const parallax = (mag: number) =>
   </head>
 
   <main ref="mainRef">
-    <div id="permission">
-      <button v-show="isDeviceOrientation" @click="useDeviceOrientation()">
-        use Device orientation
-      </button>
+    <div v-show="isDeviceOrientation" id="permission">
+      <button @click="useDeviceOrientation()">use Device orientation</button>
     </div>
     <article id="hero">
       <img
@@ -96,6 +94,13 @@ main {
   place-items: center;
   background-color: #f1f5f9;
   overflow: hidden;
+  touch-action: none;
+  user-select: none;
+
+  * {
+    touch-action: none;
+    user-select: none;
+  }
 
   #permission {
     position: absolute;
@@ -115,7 +120,8 @@ main {
     isolation: isolate;
 
     * {
-      transition: 0.3s ease-out all;
+      transition: 0.1s ease-out transform;
+      will-change: transform;
     }
 
     #areopagus-typeform {
@@ -191,6 +197,10 @@ main {
 @media screen and (min-width: 1024px) {
   main {
     #hero {
+      * {
+        transition: 0.3s ease-out transform;
+      }
+
       #areopagus-typeform {
         width: 13vw;
         margin-bottom: 2vw;
