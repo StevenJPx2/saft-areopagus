@@ -18,7 +18,7 @@ const useDeviceOrientation = () => {
         alert(response);
       })
       .catch(console.error);
-  }};
+  };
 const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
@@ -45,13 +45,13 @@ const parallax = (mag: number) =>
         :style="parallax(55)"
       />
       <img
-        src="~/assets/mountain.webp?nf_resize=fit&w=1200"
+        src="~/assets/mountain.webp"
         alt="Areopagus Mountain"
         id="mountain"
         :style="parallax(45)"
       />
       <img
-        src="~/assets/areopagus-2022-typeform.webp?nf_resize=fit&w=1000"
+        src="~/assets/areopagus-2022-typeform.webp"
         alt="Areopagus 2022 Typeform"
         id="areopagus-2022-typeform"
         :style="parallax(30)"
@@ -59,13 +59,17 @@ const parallax = (mag: number) =>
       <section id="logos" :style="parallax(55)">
         <a href="https://saftapologetics.com/" target="_blank">
           <img
-            src="~/assets/saft-typeform.webp?nf_resize=fit&w=350"
+            src="~/assets/saft-typeform.webp"
             alt="SAFT Typeform"
             id="saft-typeform"
           />
         </a>
         <a href="https://womeninapologetics.com/" target="_blank">
-          <img src="~/assets/wia.webp?nf_resize=fit&w=350" alt="WIA Logo" id="wia" />
+          <img
+            src="~/assets/wia.webp"
+            alt="WIA Logo"
+            id="wia"
+          />
         </a>
       </section>
     </article>
@@ -150,8 +154,7 @@ main {
 
   #top-leaf {
     top: 0;
-    right: 0;
-    transform: translateX(9vw);
+    right: -9vw;
     width: 65vw;
   }
 
@@ -163,8 +166,7 @@ main {
 
   #top-circle {
     top: 0;
-    left: 0;
-    transform: translateX(-14vw);
+    left: -14vw;
     width: 60vw;
   }
 
