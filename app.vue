@@ -2,22 +2,22 @@
 import { CSSProperties } from "nuxt3/dist/app/compat/capi";
 
 const mainRef = ref(null);
-const isDeviceOrientation = ref(false);
+const breakpoints = useBreakpoints({ tablet: 640 });
+
+const isMobile = breakpoints.smaller("tablet");
 
 tryOnMounted(() => {
   if (
     typeof DeviceMotionEvent !== "undefined" &&
     typeof DeviceMotionEvent.requestPermission === "function"
   )
-    isDeviceOrientation.value = true;
-    useDeviceOrientation()
+    useDeviceOrientation();
 });
 
 const useDeviceOrientation = () => {
   DeviceMotionEvent.requestPermission()
     .then((response: "granted" | "denied") => {
-      if (response == "granted") isDeviceOrientation.value = false;
-      else alert(response);
+      if (response == "denied") console.log(response);
     })
     .catch(console.error);
 };
@@ -25,7 +25,9 @@ const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
-      transform: `translate(${tilt.value * mag}px, ${roll.value * -mag}px)`,
+      transform: `translate(${
+        tilt.value * mag * 10 * (isMobile.value ? 1 : 0.1)
+      }px, ${roll.value * -mag * 10 * (isMobile.value ? 1 : 0.1)}px)`,
     })
   ).value;
 </script>
@@ -106,7 +108,6 @@ main {
     isolation: isolate;
 
     * {
-      transition: 0.1s ease-out transform;
       will-change: transform;
     }
 
