@@ -13,12 +13,13 @@ tryOnMounted(() => {
 });
 
 const useDeviceOrientation = () => {
-    DeviceMotionEvent.requestPermission()
-      .then((response) => {
-        alert(response);
-      })
-      .catch(console.error);
-  };
+  DeviceMotionEvent.requestPermission()
+    .then((response: "granted" | "denied") => {
+      if (response == "granted") isDeviceOrientation.value = false;
+      alert(response);
+    })
+    .catch(console.error);
+};
 const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
@@ -34,9 +35,11 @@ const parallax = (mag: number) =>
   </head>
 
   <main ref="mainRef">
-    <button v-show="isDeviceOrientation" @click="useDeviceOrientation()">
-      use Device orientation
-    </button>
+    <div id="permission">
+      <button v-show="isDeviceOrientation" @click="useDeviceOrientation()">
+        use Device orientation
+      </button>
+    </div>
     <article id="hero">
       <img
         src="~/assets/areopagus-typeform.svg"
@@ -65,11 +68,7 @@ const parallax = (mag: number) =>
           />
         </a>
         <a href="https://womeninapologetics.com/" target="_blank">
-          <img
-            src="~/assets/wia.webp"
-            alt="WIA Logo"
-            id="wia"
-          />
+          <img src="~/assets/wia.webp" alt="WIA Logo" id="wia" />
         </a>
       </section>
     </article>
@@ -97,6 +96,18 @@ main {
   place-items: center;
   background-color: #f1f5f9;
   overflow: hidden;
+
+  #permission {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-content: center;
+  }
 
   #hero {
     display: grid;
