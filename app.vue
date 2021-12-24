@@ -2,6 +2,7 @@
 import { CSSProperties } from "nuxt3/dist/app/compat/capi";
 
 const mainRef = ref(null);
+const isDeviceOrientation = ref(false);
 const breakpoints = useBreakpoints({ tablet: 640 });
 
 const isMobile = breakpoints.smaller("tablet");
@@ -17,7 +18,8 @@ tryOnMounted(() => {
 const useDeviceOrientation = () => {
   DeviceMotionEvent.requestPermission()
     .then((response: "granted" | "denied") => {
-      if (response == "denied") console.log(response);
+      if (response == "granted") isDeviceOrientation.value = false;
+      else alert(response);
     })
     .catch(console.error);
 };
@@ -25,9 +27,9 @@ const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
-      transform: `translate(${
-        tilt.value * mag * 10 * (isMobile.value ? 1 : 0.1)
-      }px, ${roll.value * -mag * 10 * (isMobile.value ? 1 : 0.1)}px)`,
+      transform: `translate(${tilt.value * mag * (isMobile.value ? 1 : 3)}px, ${
+        roll.value * -mag * (isMobile.value ? 1 : 3)
+      }px)`,
     })
   ).value;
 </script>
@@ -38,6 +40,9 @@ const parallax = (mag: number) =>
   </head>
 
   <main ref="mainRef">
+    <div v-show="isDeviceOrientation" id="permission">
+      <button @click="useDeviceOrientation()">use Device orientation</button>
+    </div>
     <article id="hero">
       <img
         src="~/assets/areopagus-typeform.svg"
