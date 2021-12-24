@@ -12,6 +12,7 @@ tryOnMounted(() => {
     typeof DeviceMotionEvent !== "undefined" &&
     typeof DeviceMotionEvent.requestPermission === "function"
   )
+    isDeviceOrientation.value = true;
     useDeviceOrientation();
 });
 
