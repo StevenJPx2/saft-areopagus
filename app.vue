@@ -13,7 +13,7 @@ tryOnMounted(() => {
     typeof DeviceMotionEvent.requestPermission === "function"
   )
     isDeviceOrientation.value = true;
-    useDeviceOrientation();
+  useDeviceOrientation();
 });
 
 const useDeviceOrientation = () => {
@@ -60,6 +60,30 @@ const parallax = (mag: number) =>
 
       <Meta name="msapplication-TileColor" content="#2b5797" />
       <Meta name="theme-color" content="#ffffff" />
+      <Meta name="title" content="Areopagus 2022" />
+      <Meta
+        name="description"
+        content="At Areopagus 2022 we present the unique nature of the God of the Bible. There is none like Him. This is the place to come and seek why He is unique."
+      />
+      <Meta
+        name="keywords"
+        content="Apologetics, Christianity, God, Theism, Theology, Philosophy, India, Conference, Women In Apologetics, Rational, Logical, Faith, Evidence, Belief, Holy Spirit"
+      />
+      <Meta name="robots" content="index, follow" />
+      <Meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <Meta name="language" content="English" />
+      <Meta property="og:title" content="Areopagus 2022" />
+      <Meta property="og:site_name" content="The Areopagus Project" />
+      <Meta property="og:url" content="https://areopagus.saftapologetics.com" />
+      <Meta
+        property="og:description"
+        content="At Areopagus 2022 we present the unique nature of the God of the Bible. There is none like Him. This is the place to come and seek why He is unique."
+      />
+      <Meta property="og:type" content="website" />
+      <Meta
+        property="og:image"
+        content="https://instagram.ffjr1-4.fna.fbcdn.net/v/t51.2885-15/sh0.08/e35/s640x640/266810431_1087823095325347_4811957464547212242_n.jpg?_nc_ht=instagram.ffjr1-4.fna.fbcdn.net&_nc_cat=107&_nc_ohc=-6Xb4btrdDwAX8TYjRJ&tn=aNuSA_PwhQjMLTS-&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT_d3I3F43LGaZxAec9y4zucsptVXzIlzRzkq5GBITmXQg&oe=61CFA500&_nc_sid=7bff83"
+      />
     </Head>
   </Html>
 
@@ -131,7 +155,7 @@ main {
     user-select: none;
   }
 
-   #permission {
+  #permission {
     position: absolute;
     top: 0;
     bottom: 0;
