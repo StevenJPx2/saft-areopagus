@@ -12,7 +12,6 @@ tryOnMounted(() => {
     typeof DeviceMotionEvent !== "undefined" &&
     typeof DeviceMotionEvent.requestPermission === "function"
   )
-    isDeviceOrientation.value = true;
     useDeviceOrientation();
 });
 
@@ -28,8 +27,8 @@ const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
-      transform: `translate(${tilt.value * mag * (isMobile.value ? 1 : 4)}px, ${
-        roll.value * -mag * (isMobile.value ? 1 : 4)
+      transform: `translate(${tilt.value * mag * (isMobile.value ? 1 : 3)}px, ${
+        roll.value * -mag * (isMobile.value ? 1 : 3)
       }px)`,
     })
   ).value;
@@ -131,18 +130,6 @@ main {
     user-select: none;
   }
 
-   #permission {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: grid;
-    place-content: center;
-  }
-
   #hero {
     display: grid;
     place-items: center;
@@ -159,7 +146,7 @@ main {
 
     #mountain {
       width: 90vw;
-      margin-bottom: -8vw;
+      margin-bottom: -9vw;
     }
 
     #areopagus-2022-typeform {
