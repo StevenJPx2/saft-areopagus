@@ -117,6 +117,7 @@ const parallax = (mag: number) =>
 
   <main ref="mainRef">
     <button
+      v-if="false"
       @click="useDebug = !useDebug"
       :style="{ position: 'absolute', zIndex: 10000, top: '10vh' }"
     >
