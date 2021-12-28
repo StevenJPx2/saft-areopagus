@@ -31,11 +31,11 @@ const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
       transform: `translate(${
-        Math.max(-1, Math.min(1, tilt.value - initTilt.value)) *
+        (Math.max(-1, Math.min(1, tilt.value)) - initTilt.value) *
         mag *
         (source.value == "deviceOrientation" ? 2 : 1.5)
       }px, ${
-        Math.max(-1, Math.min(1, roll.value - initRoll.value)) *
+        (Math.max(-1, Math.min(1, roll.value)) - initRoll.value) *
         -mag *
         (source.value == "deviceOrientation" ? 2 : 1.5)
       }px)`,
@@ -118,7 +118,12 @@ if (source.value == "deviceOrientation") {
   </Html>
 
   <main ref="mainRef">
-    <button @click="useDebug = !useDebug" :style="{position: 'absolute', zIndex: 10000, top: '10vh'}">Use Debug</button>
+    <button
+      @click="useDebug = !useDebug"
+      :style="{ position: 'absolute', zIndex: 10000, top: '10vh' }"
+    >
+      Use Debug
+    </button>
     <div class="debug" :class="{ hidden: useDebug }">
       {{ tilt.toFixed(2) }} {{ roll.toFixed(2) }} {{ initTilt.toFixed(2) }}
       {{ initRoll.toFixed(2) }} {{ parallax(1) }}
