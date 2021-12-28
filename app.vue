@@ -31,11 +31,11 @@ const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
       transform: `translate(${
-        (Math.max(-1, Math.min(1, tilt.value)) - initTilt.value) *
+        (tilt.value - initTilt.value) *
         mag *
         (source.value == "deviceOrientation" ? 2 : 1.5)
       }px, ${
-        (Math.max(-1, Math.min(1, roll.value)) - initRoll.value) *
+        (roll.value - initRoll.value) *
         -mag *
         (source.value == "deviceOrientation" ? 2 : 1.5)
       }px)`,
