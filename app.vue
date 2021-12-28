@@ -2,6 +2,7 @@
 import { CSSProperties } from "nuxt3/dist/app/compat/capi";
 
 const mainRef = ref(null);
+const isDebug = useUrlSearchParams('history')
 const { tilt, roll, source } = useParallax(mainRef);
 const isDeviceOrientation = ref(false);
 const initTilt = ref(0);
@@ -117,11 +118,11 @@ if (source.value == "deviceOrientation") {
   </Html>
 
   <main ref="mainRef">
-    <div class="debug">
+    <div class="debug" :class="{'hidden': isDebug.debug != 'true'}">
       {{ tilt.toFixed(2) }} {{ roll.toFixed(2) }} {{ initTilt.toFixed(2) }}
       {{ initRoll.toFixed(2) }} {{ parallax(1) }}
     </div>
-    <div v-show="isDeviceOrientation" id="permission">
+    <div v-if="isDeviceOrientation" id="permission">
       <button @click="useDeviceOrientation()">Use Device Orientation</button>
     </div>
     <article id="hero">
@@ -171,13 +172,17 @@ if (source.value == "deviceOrientation") {
   transition: 0.3s ease-out all;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .debug {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  display: none;
+  display: grid;
   place-content: center;
   z-index: 1000;
   font-size: 80px;
