@@ -115,7 +115,7 @@ watchAtMost(
   </Html>
 
   <main ref="mainRef">
-    <div class="debug"> {{ tilt }} {{ roll }} {{ initTilt }} {{ initRoll }}</div>
+    <div class="debug"> {{ tilt.toFixed(2) }} {{ roll.toFixed(2) }} {{ initTilt.toFixed(2) }} {{ initRoll.toFixed(2) }}</div>
     <div v-show="isDeviceOrientation" id="permission">
       <button @click="useDeviceOrientation()">Use Device Orientation</button>
     </div>
