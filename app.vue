@@ -30,36 +30,38 @@ const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
       transform: `translate(${
-        (tilt.value - initTilt.value) *
+        Math.max(-1, Math.min(1, tilt.value - initTilt.value)) *
         mag *
         (source.value == "deviceOrientation" ? 2 : 1.5)
       }px, ${
-        (roll.value - initRoll.value) *
+        Math.max(-1, Math.min(1, roll.value - initRoll.value)) *
         -mag *
         (source.value == "deviceOrientation" ? 2 : 1.5)
       }px)`,
     })
   ).value;
 
-watchAtMost(
-  tilt,
-  (tiltVal) => {
-    initTilt.value = tiltVal;
-  },
-  {
-    count: 3, // the number of times triggered
-  }
-);
+if (source.value == "deviceOrientation") {
+  watchAtMost(
+    tilt,
+    (tiltVal) => {
+      initTilt.value = tiltVal;
+    },
+    {
+      count: 3,
+    }
+  );
 
-watchAtMost(
-  roll,
-  (rollVal) => {
-    initRoll.value = rollVal;
-  },
-  {
-    count: 3, // the number of times triggered
-  }
-);
+  watchAtMost(
+    roll,
+    (rollVal) => {
+      initRoll.value = rollVal;
+    },
+    {
+      count: 3,
+    }
+  );
+}
 </script>
 
 <template>
@@ -115,7 +117,10 @@ watchAtMost(
   </Html>
 
   <main ref="mainRef">
-    <div class="debug"> {{ tilt.toFixed(2) }} {{ roll.toFixed(2) }} {{ initTilt.toFixed(2) }} {{ initRoll.toFixed(2) }} {{ parallax(1) }}</div>
+    <div class="debug">
+      {{ tilt.toFixed(2) }} {{ roll.toFixed(2) }} {{ initTilt.toFixed(2) }}
+      {{ initRoll.toFixed(2) }} {{ parallax(1) }}
+    </div>
     <div v-show="isDeviceOrientation" id="permission">
       <button @click="useDeviceOrientation()">Use Device Orientation</button>
     </div>
@@ -167,13 +172,12 @@ watchAtMost(
 }
 
 .debug {
-  // display: hidden;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  display: grid;
+  display: none;
   place-content: center;
   z-index: 1000;
   font-size: 80px;
