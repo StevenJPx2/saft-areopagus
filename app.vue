@@ -2,37 +2,64 @@
 import { CSSProperties } from "nuxt3/dist/app/compat/capi";
 
 const mainRef = ref(null);
+const { tilt, roll, source } = useParallax(mainRef);
 const isDeviceOrientation = ref(false);
-const breakpoints = useBreakpoints({ tablet: 640 });
-
-const isMobile = breakpoints.smaller("tablet");
+const initTilt = ref(0);
+const initRoll = ref(0);
 
 tryOnMounted(() => {
   if (
     typeof DeviceMotionEvent !== "undefined" &&
-    typeof DeviceMotionEvent.requestPermission === "function"
-  )
+    typeof (DeviceMotionEvent as any).requestPermission === "function"
+  ) {
     isDeviceOrientation.value = true;
-  useDeviceOrientation();
+    useDeviceOrientation();
+  }
 });
 
 const useDeviceOrientation = () => {
-  DeviceMotionEvent.requestPermission()
+  (DeviceMotionEvent as any)
+    .requestPermission()
     .then((response: "granted" | "denied") => {
       if (response == "granted") isDeviceOrientation.value = false;
       else alert(response);
     })
     .catch(console.error);
 };
-const { tilt, roll } = useParallax(mainRef);
 const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
-      transform: `translate(${tilt.value * mag * (isMobile.value ? 2 : 1.5)}px, ${
-        roll.value * -mag * (isMobile.value ? 2 : 1.5)
+      transform: `translate(${
+        (tilt.value - initTilt.value) *
+        mag *
+        (source.value == "deviceOrientation" ? 2 : 1.5)
+      }px, ${
+        (roll.value - initRoll.value) *
+        -mag *
+        (source.value == "deviceOrientation" ? 2 : 1.5)
       }px)`,
     })
   ).value;
+
+watchAtMost(
+  tilt,
+  (tiltVal) => {
+    initTilt.value = tiltVal;
+  },
+  {
+    count: 3, // the number of times triggered
+  }
+);
+
+watchAtMost(
+  roll,
+  (rollVal) => {
+    initRoll.value = rollVal;
+  },
+  {
+    count: 3, // the number of times triggered
+  }
+);
 </script>
 
 <template>
@@ -88,6 +115,7 @@ const parallax = (mag: number) =>
   </Html>
 
   <main ref="mainRef">
+    <div class="debug"> {{ tilt }} {{ roll }} {{ initTilt }} {{ initRoll }}</div>
     <div v-show="isDeviceOrientation" id="permission">
       <button @click="useDeviceOrientation()">Use Device Orientation</button>
     </div>
@@ -136,6 +164,18 @@ const parallax = (mag: number) =>
 
 .ease-out {
   transition: 0.3s ease-out all;
+}
+
+.debug {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  place-content: center;
+  z-index: 1000;
+  font-size: 80px;
 }
 
 main {
