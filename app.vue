@@ -31,36 +31,36 @@ const parallax = (mag: number) =>
   computed(
     (): CSSProperties => ({
       transform: `translate(${
-        (tilt.value - initTilt.value) *
+        (Math.max(-1, Math.min(1, tilt.value)) - initTilt.value) *
         mag *
         (source.value == "deviceOrientation" ? 2 : 1.5)
       }px, ${
-        (roll.value - initRoll.value) *
+        (Math.max(-1, Math.min(1, roll.value)) - initRoll.value) *
         -mag *
         (source.value == "deviceOrientation" ? 2 : 1.5)
       }px)`,
     })
   ).value;
 
-watchAtMost(
-  tilt,
-  (tiltVal) => {
-    if (source.value == "deviceOrientation") initTilt.value = tiltVal;
-  },
-  {
-    count: 3,
-  }
-);
+  watchAtMost(
+    tilt,
+    (tiltVal) => {
+      if (source.value == "deviceOrientation") initTilt.value = tiltVal;
+    },
+    {
+      count: 3,
+    }
+  );
 
-watchAtMost(
-  roll,
-  (rollVal) => {
-    if (source.value == "deviceOrientation") initRoll.value = rollVal;
-  },
-  {
-    count: 3,
-  }
-);
+  watchAtMost(
+    roll,
+    (rollVal) => {
+      if (source.value == "deviceOrientation") initRoll.value = rollVal;
+    },
+    {
+      count: 3,
+    }
+  );
 </script>
 
 <template>
