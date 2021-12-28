@@ -42,11 +42,10 @@ const parallax = (mag: number) =>
     })
   ).value;
 
-if (source.value == "deviceOrientation") {
   watchAtMost(
     tilt,
     (tiltVal) => {
-      initTilt.value = tiltVal;
+      if (source.value == "deviceOrientation") initTilt.value = tiltVal;
     },
     {
       count: 3,
@@ -56,13 +55,12 @@ if (source.value == "deviceOrientation") {
   watchAtMost(
     roll,
     (rollVal) => {
-      initRoll.value = rollVal;
+      if (source.value == "deviceOrientation") initRoll.value = rollVal;
     },
     {
       count: 3,
     }
   );
-}
 </script>
 
 <template>
@@ -124,7 +122,7 @@ if (source.value == "deviceOrientation") {
     >
       Use Debug
     </button>
-    <div class="debug" :class="{ hidden: useDebug }">
+    <div class="debug" :class="{ hidden: !useDebug }">
       {{ tilt.toFixed(2) }} {{ roll.toFixed(2) }} {{ initTilt.toFixed(2) }}
       {{ initRoll.toFixed(2) }} {{ parallax(1) }}
     </div>
