@@ -117,7 +117,7 @@ watchAtMost(
 
   <main ref="mainRef">
     <button
-      v-if="true"
+      v-if="false"
       @click="useDebug = !useDebug"
       :style="{ position: 'absolute', zIndex: 10000, top: '10vh' }"
     >
@@ -125,7 +125,7 @@ watchAtMost(
     </button>
     <div class="debug" :class="{ hidden: !useDebug }">
       {{ tilt.toFixed(2) }} {{ roll.toFixed(2) }} {{ initTilt.toFixed(2) }}
-      {{ initRoll.toFixed(2) }} {{ parallax(1).transform }}
+      {{ initRoll.toFixed(2) }} {{ parallax(1) }}
     </div>
     <div v-if="isDeviceOrientation" id="permission">
       <button @click="useDeviceOrientation()">Use Device Orientation</button>
