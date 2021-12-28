@@ -167,7 +167,7 @@ watchAtMost(
 }
 
 .debug {
-  display: hidden;
+  // display: hidden;
   position: absolute;
   top: 0;
   bottom: 0;
