@@ -138,26 +138,27 @@ watchAtMost(
         id="areopagus-2022-typeform"
         :style="parallax(30)"
       />
-      <section id="logos" :style="parallax(55)">
-        <a href="https://saftapologetics.com/" target="_blank">
-          <img
-            src="~/assets/saft-typeform.svg"
-            alt="SAFT Typeform"
-            id="saft-typeform"
-          />
-        </a>
-        <a href="https://womeninapologetics.com/" target="_blank">
-          <img src="~/assets/wia.webp" alt="WIA Logo" id="wia" />
+      <section id="links">
+        <div id="logos" :style="parallax(55)">
+          <a href="https://saftapologetics.com/" target="_blank">
+            <img
+              src="~/assets/saft-typeform.svg"
+              alt="SAFT Typeform"
+              id="saft-typeform"
+            />
+          </a>
+          <a href="https://womeninapologetics.com/" target="_blank">
+            <img src="~/assets/wia.webp" alt="WIA Logo" id="wia" />
+          </a>
+        </div>
+        <a
+          id="oval-button"
+          href="https://www.airmeet.com/e/e7d27860-9e08-11ec-a386-bdb5ea041039"
+        >
+          <span>Register for the conference here!</span>
         </a>
       </section>
     </article>
-
-    <a
-      id="oval-button"
-      href="https://www.airmeet.com/e/e7d27860-9e08-11ec-a386-bdb5ea041039"
-    >
-      <span>Register for the conference here!</span>
-    </a>
 
     <img src="~/assets/Top-Leaf.svg" id="top-leaf" />
     <img src="~/assets/Bottom-Leaf.svg" id="bottom-leaf" />
@@ -206,31 +207,6 @@ main {
     user-select: none;
   }
 
-  #oval-button {
-    cursor: pointer;
-    position: absolute;
-    text-decoration: none;
-    color: #07003d;
-    font-size: 5vw;
-    padding: 13vw;
-    border-radius: 50%;
-    border: 1px solid #07003d;
-    transform: rotate(-12deg);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    bottom: 20vw;
-
-    span {
-      text-align: center;
-      max-width: 50vw;
-      display: inline-block;
-      transform: rotate(12deg);
-    }
-
-    &:hover {
-      transform: scale(1.1) rotate(-12deg);
-    }
-  }
-
   #permission {
     position: absolute;
     top: 0;
@@ -247,7 +223,7 @@ main {
     display: grid;
     place-items: center;
     isolation: isolate;
-    margin-top: -50vw;
+    margin-top: 0vw;
 
     * {
       will-change: transform;
@@ -269,22 +245,50 @@ main {
       z-index: -1;
     }
 
-    #logos {
-      display: flex;
-      flex: 0 1 auto;
-      align-items: center;
-      width: 77vw;
+    #links {
+      #logos {
+        display: flex;
+        flex: 0 1 auto;
+        align-items: center;
+        width: 77vw;
 
-      & * {
-        width: 100%;
-        height: 100%;
+        & * {
+          width: 100%;
+          height: 100%;
+        }
+
+        #saft-typeform {
+        }
+
+        #wia {
+          margin-left: 4vw;
+        }
       }
 
-      #saft-typeform {
-      }
+      #oval-button {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        color: #07003d;
+        font-size: 4vw;
+        padding: 9vw;
+        border-radius: 50%;
+        border: 1px solid #07003d;
+        transform: rotate(-12deg);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        margin: 20vw auto 0 auto;
+        width: 70vw;
 
-      #wia {
-        margin-left: 4vw;
+        span {
+          text-align: center;
+          max-width: 50vw;
+          display: inline-block;
+          transform: rotate(12deg);
+        }
+
+        &:hover {
+          transform: scale(1.1) rotate(-12deg);
+        }
       }
     }
   }
@@ -325,20 +329,8 @@ main {
 
 @media screen and (min-width: 640px) {
   main {
-    #oval-button {
-      bottom: 8.2vw;
-      right: 30vw;
-      font-size: 1vw;
-      padding: 3vw 3.3vw;
-
-      span {
-        transform: rotate(12deg) translateY(-0.2vw);
-        max-width: 11vw;
-      }
-    }
-
     #hero {
-      margin: 0 0 9vw 0;
+      margin: 0 0 2vw 0;
 
       * {
         transition: 0.3s ease-out transform;
@@ -356,24 +348,43 @@ main {
 
       #areopagus-2022-typeform {
         width: 38vw;
-        margin-bottom: 3vw;
+        margin-bottom: 2vw;
       }
 
-      #logos {
-        display: block;
-        width: 28vw;
-        margin-left: -5vw;
+      #links {
+        display: flex;
 
-        & * {
+        #logos {
+          display: block;
+          width: 28vw;
+          margin-left: 0vw;
+
+          & * {
+            margin-bottom: -2vw;
+          }
+
+          #saft-typeform {
+            width: 15vw;
+          }
+
+          #wia {
+            width: 17vw;
+            height: auto;
+            margin-left: -1.1vw;
+          }
         }
 
-        #saft-typeform {
-          width: 15vw;
-        }
+        #oval-button {
+          margin-top: 0vw;
+          margin-left: -6vw;
+          font-size: 1vw;
+          padding: 3vw 3.3vw;
+          width: auto;
 
-        #wia {
-          width: 16vw;
-          margin-left: -1.1vw;
+          span {
+            transform: rotate(12deg) translateY(-0.2vw);
+            max-width: 11vw;
+          }
         }
       }
     }
