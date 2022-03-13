@@ -116,17 +116,6 @@ watchAtMost(
   </Html>
 
   <main ref="mainRef">
-    <button
-      v-if="false"
-      @click="useDebug = !useDebug"
-      :style="{ position: 'absolute', zIndex: 10000, top: '10vh' }"
-    >
-      Use Debug
-    </button>
-    <div class="debug" :class="{ hidden: !useDebug }">
-      {{ tilt.toFixed(2) }} {{ roll.toFixed(2) }} {{ initTilt.toFixed(2) }}
-      {{ initRoll.toFixed(2) }} {{ parallax(1) }}
-    </div>
     <div v-if="isDeviceOrientation" id="permission">
       <button @click="useDeviceOrientation()">Use Device Orientation</button>
     </div>
@@ -138,7 +127,7 @@ watchAtMost(
         :style="parallax(55)"
       />
       <img
-        src="~/assets/mountain.webp"
+        src="~/assets/mountain-speakers.webp"
         alt="Areopagus Mountain"
         id="mountain"
         :style="parallax(45)"
@@ -162,6 +151,13 @@ watchAtMost(
         </a>
       </section>
     </article>
+
+    <a
+      id="oval-button"
+      href="https://www.airmeet.com/e/e7d27860-9e08-11ec-a386-bdb5ea041039"
+    >
+      <span>Register for the conference here!</span>
+    </a>
 
     <img src="~/assets/Top-Leaf.svg" id="top-leaf" />
     <img src="~/assets/Bottom-Leaf.svg" id="bottom-leaf" />
@@ -210,6 +206,31 @@ main {
     user-select: none;
   }
 
+  #oval-button {
+    cursor: pointer;
+    position: absolute;
+    text-decoration: none;
+    color: #07003d;
+    font-size: 5vw;
+    padding: 13vw;
+    border-radius: 50%;
+    border: 1px solid #07003d;
+    transform: rotate(-12deg);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    bottom: 20vw;
+
+    span {
+      text-align: center;
+      max-width: 50vw;
+      display: inline-block;
+      transform: rotate(12deg);
+    }
+
+    &:hover {
+      transform: scale(1.1) rotate(-12deg);
+    }
+  }
+
   #permission {
     position: absolute;
     top: 0;
@@ -226,6 +247,7 @@ main {
     display: grid;
     place-items: center;
     isolation: isolate;
+    margin-top: -50vw;
 
     * {
       will-change: transform;
@@ -243,7 +265,7 @@ main {
 
     #areopagus-2022-typeform {
       width: 81vw;
-      margin-bottom: 11vw;
+      margin-bottom: 5vw;
       z-index: -1;
     }
 
@@ -303,7 +325,21 @@ main {
 
 @media screen and (min-width: 640px) {
   main {
+    #oval-button {
+      bottom: 8.2vw;
+      right: 30vw;
+      font-size: 1vw;
+      padding: 3vw 3.3vw;
+
+      span {
+        transform: rotate(12deg) translateY(-0.2vw);
+        max-width: 12vw;
+      }
+    }
+
     #hero {
+      margin: 0 0 9vw 0;
+
       * {
         transition: 0.3s ease-out transform;
       }
@@ -314,28 +350,30 @@ main {
       }
 
       #mountain {
-        width: 50vw;
+        width: 40vw;
         margin-bottom: -4vw;
       }
 
       #areopagus-2022-typeform {
-        width: 40vw;
-        margin-bottom: 4vw;
+        width: 38vw;
+        margin-bottom: 3vw;
       }
 
       #logos {
-        width: 30vw;
+        display: block;
+        width: 28vw;
+        margin-left: -5vw;
 
         & * {
-          width: 100%;
-          height: 100%;
         }
 
         #saft-typeform {
+          width: 15vw;
         }
 
         #wia {
-          margin-left: 4vw;
+          width: 16vw;
+          margin-left: -1.1vw;
         }
       }
     }

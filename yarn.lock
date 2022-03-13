@@ -537,6 +537,11 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
+"@rive-app/canvas@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@rive-app/canvas/-/canvas-1.0.11.tgz#5ccd26908a7ad1f08753acda7c096107f52a6fb0"
+  integrity sha512-Y+wPdeD3AHicA0ZkLeByZl+IodArHPlo6JBhXWEq9AStlBS1lMVAymkvw+phVahXDwYw98tEgtRN3Q19g4ICZQ==
+
 "@rollup/plugin-alias@^3.1.8":
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-alias/-/plugin-alias-3.1.8.tgz#645fd84659e08d3d1b059408fcdf69c1dd435a6b"
