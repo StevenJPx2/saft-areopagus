@@ -333,7 +333,7 @@ main {
 
       span {
         transform: rotate(12deg) translateY(-0.2vw);
-        max-width: 12vw;
+        max-width: 11vw;
       }
     }
 
