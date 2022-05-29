@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { CSSProperties } from "nuxt3/dist/app/compat/capi";
+import { CSSProperties } from "nuxt/dist/app/compat/capi";
 
 const mainRef = ref(null);
-const useDebug = ref(false);
 const { tilt, roll, source } = useParallax(mainRef);
 const isDeviceOrientation = ref(false);
 const initTilt = ref(0);
@@ -153,9 +152,9 @@ watchAtMost(
         </div>
         <a
           id="oval-button"
-          href="https://www.airmeet.com/e/e7d27860-9e08-11ec-a386-bdb5ea041039"
+          href="https://youtube.com/playlist?list=PLaYfapFz2p2VS2N2v_OsQBUf6B67sEOo-"
         >
-          <span>Register for the conference here!</span>
+          <span>Watch our recordings here!</span>
         </a>
       </section>
     </article>
@@ -281,7 +280,8 @@ main {
 
         span {
           text-align: center;
-          max-width: 50vw;
+          max-width: 45vw;
+          margin-left: 5vw;
           display: inline-block;
           transform: rotate(12deg);
         }
@@ -383,6 +383,7 @@ main {
 
           span {
             transform: rotate(12deg) translateY(-0.2vw);
+            margin-left: 0;
             max-width: 11vw;
           }
         }
