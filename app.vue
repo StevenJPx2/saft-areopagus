@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CSSProperties } from "nuxt/dist/app/compat/capi";
+import { CSSProperties } from "vue";
 
 const mainRef = ref(null);
 const { tilt, roll, source } = useParallax(mainRef);
@@ -97,7 +97,7 @@ watchAtMost(
         content="Apologetics, Christianity, God, Theism, Theology, Philosophy, India, Conference, Women In Apologetics, Rational, Logical, Faith, Evidence, Belief, Holy Spirit"
       />
       <Meta name="robots" content="index, follow" />
-      <Meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <Meta http-equiv="content-type" content="text/html; charset=utf-8" />
       <Meta name="language" content="English" />
       <Meta property="og:title" content="Areopagus 2022" />
       <Meta property="og:site_name" content="The Areopagus Project" />
@@ -126,13 +126,13 @@ watchAtMost(
         :style="parallax(55)"
       />
       <img
-        src="~/assets/mountain-speakers.webp"
+        src="https://i.imgur.com/vPCeDP2.png"
         alt="Areopagus Mountain"
         id="mountain"
         :style="parallax(45)"
       />
       <img
-        src="~/assets/areopagus-2022-typeform.webp"
+        src="https://i.imgur.com/tqK8kGg.png"
         alt="Areopagus 2022 Typeform"
         id="areopagus-2022-typeform"
         :style="parallax(30)"
@@ -147,7 +147,11 @@ watchAtMost(
             />
           </a>
           <a href="https://womeninapologetics.com/" target="_blank">
-            <img src="~/assets/wia.webp" alt="WIA Logo" id="wia" />
+            <img
+              src="https://i.imgur.com/yu91mlB.png"
+              alt="WIA Logo"
+              id="wia"
+            />
           </a>
         </div>
         <a
